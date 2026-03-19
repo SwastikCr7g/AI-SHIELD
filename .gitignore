@@ -1,5 +1,15 @@
+# Temporary Forensic Files
+ela_temp_*
+
+# Python environment & cache
 venv/
-app/uploads/*
 __pycache__/
 *.pyc
-.env
+
+# User Uploads (Inhe push nahi karna chahiye)
+app/static/uploads/*
+!app/static/uploads/.gitkeep
+
+# IDE files
+.idea/
+.vscode/
