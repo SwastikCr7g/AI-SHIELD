@@ -1,143 +1,220 @@
-/* main.css */
+/* AIShield Master Styling - Next-Gen Cyber Theme */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
 
-/* General reset */
+:root {
+  --bg-dark: #0a0c10;
+  --card-bg: rgba(17, 25, 40, 0.75);
+  --accent-neon: #00f2ff;
+  --accent-purple: #7000ff;
+  --text-main: #e2e8f0;
+  --danger: #ff4d4d;
+  --success: #00ff96;
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
-  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
-  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top right, #1a1a2e, #0a0c10);
+  background-attachment: fixed;
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Header & Typography */
+header {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--glass-border);
+  display: flex;
+  justify-content: center; /* Ensures header content is centered */
+}
+
+h1, h2, h3 {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center; /* Global center alignment for headings */
+}
+
+h1 {
+  font-size: 1.8rem;
+  background: linear-gradient(to right, var(--accent-neon), var(--accent-purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+/* Hero Section */
+.hero {
+  padding: 60px 20px;
+  animation: fadeIn 1s ease-in;
   text-align: center;
 }
 
-/* Hero / Main Heading */
-.hero h1,
-.hero h2 {
-  font-size: 2.5rem;
-  margin: 30px 0 20px;
-  color: #00f5d4;
-  text-align: center;
-  letter-spacing: 1px;
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
-/* Subheadings (Detect Image, Detect Video) */
-section h2 {
-  font-size: 2rem;
-  margin: 20px 0 15px;
-  color: #00f5d4;
-  text-align: center;
-}
-
-/* Paragraph spacing */
-.hero p,
-section p {
-  font-size: 1rem;
-  margin-bottom: 25px;
-  line-height: 1.6;
-}
-
-/* Upload Box */
-.upload-box {
-  margin: 25px auto;
-  padding: 30px;
-  max-width: 400px;
-  border: 2px dashed #00f5d4;
-  border-radius: 15px;
-  background: rgba(255, 255, 255, 0.05);
-  text-align: center;
-}
-
-/* Buttons */
-button,
-.back-btn {
-  display: block;
-  margin: 30px auto 0;
-  padding: 12px 22px;
-  border-radius: 12px;
-  border: none;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button {
-  background: #00f5d4;
-  color: #111;
-}
-
-button:hover {
-  background: #00c9a7;
-}
-
-.back-btn {
-  background: #ff4d6d;
-  color: #fff;
-  text-decoration: none;
-}
-
-.back-btn:hover {
-  background: #e63956;
-}
-
-/* Grid cards in index.html */
+/* Grid Cards */
 .choice-grid {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: 30px;
+  margin-top: 50px;
   flex-wrap: wrap;
-  margin-top: 40px;
 }
 
 .card {
-  background: rgba(255, 255, 255, 0.08);
-  padding: 25px;
-  border-radius: 15px;
-  width: 220px;
-  transition: transform 0.3s, background 0.3s;
-  text-align: center;
-}
-
-.card h3 {
-  color: #00f5d4;
-  margin-bottom: 10px;
-}
-
-.card p {
-  font-size: 0.9rem;
+  background: var(--card-bg);
+  border: 1px solid var(--glass-border);
+  padding: 40px 30px;
+  border-radius: 20px;
+  width: 280px;
+  text-decoration: none;
+  color: white;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  background: rgba(255, 255, 255, 0.12);
+  transform: translateY(-15px);
+  border-color: var(--accent-neon);
+  box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
 }
-.page-heading {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 20px;
-  color: #222; /* same color theme as previous UI */
+
+.card h3 {
+  color: var(--accent-neon);
+  margin-bottom: 15px;
 }
-/* Result Box */
-.result-box {
-  margin: 20px auto;
-  padding: 20px;
+
+/* Upload Interface */
+.upload-box {
+  margin: 30px auto;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 2px dashed var(--glass-border);
+  border-radius: 20px;
+  transition: 0.3s;
   max-width: 500px;
-  border-radius: 12px;
-  font-size: 1.2rem;
+}
+
+.upload-box:hover {
+  border-color: var(--accent-purple);
+  background: rgba(112, 0, 255, 0.05);
+}
+
+/* Form Elements & Buttons */
+input[type="file"] {
+  color: #94a3b8;
+  margin-bottom: 20px;
+}
+
+button {
+  background: linear-gradient(45deg, var(--accent-purple), #a855f7);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 10px;
+  border: none;
+  font-family: 'Orbitron';
   font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  text-transform: uppercase;
+  box-shadow: 0 5px 15px rgba(112, 0, 255, 0.3);
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(112, 0, 255, 0.5);
+}
+
+/* Analysis Dashboard Components */
+.result-box {
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 15px;
+  font-family: 'Orbitron';
+  font-size: 1.4rem;
+  max-width: 600px;
+  animation: glow 2s infinite alternate;
   text-align: center;
 }
 
-/* Real result (green) */
-.result-real {
-  background: rgba(0, 255, 150, 0.15);
-  border: 2px solid #00ff96;
-  color: #00ff96;
+@keyframes glow {
+  from { box-shadow: 0 0 10px rgba(255,255,255,0.1); }
+  to { box-shadow: 0 0 20px rgba(255,255,255,0.2); }
 }
 
-/* AI result (red) */
+.result-real {
+  background: rgba(0, 255, 150, 0.1);
+  border: 1px solid var(--success);
+  color: var(--success);
+}
+
 .result-ai {
-  background: rgba(255, 50, 80, 0.15);
-  border: 2px solid #ff3250;
-  color: #ff3250;
+  background: rgba(255, 77, 77, 0.1);
+  border: 1px solid var(--danger);
+  color: var(--danger);
+}
+
+/* Utils: Back Button */
+.back-btn {
+  text-align: center;
+}
+
+.back-btn a {
+  display: inline-block;
+  color: #64748b;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-top: 40px;
+  transition: 0.3s;
+}
+
+.back-btn a:hover {
+  color: var(--accent-neon);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-purple);
+}
+
+/* Final Layout Fixes - Explicit Alignment */
+.page-heading {
+  text-align: center !important;
+  width: 100%;
+  margin: 20px 0 40px 0;
+  display: block;
+}
+
+.dashboard-container, .analysis-grid {
+  width: 90%;
+  max-width: 1200px;
+  margin: 30px auto;
+}
+
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }

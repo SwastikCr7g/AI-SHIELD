@@ -1,20 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Content Detector</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIShield | Neural Content Security</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Base Layout Fixes */
+        header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 0;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .nav-logo {
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .nav-logo i {
+            font-size: 2rem;
+            color: var(--accent-neon);
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            text-align: center;
+            color: #475569;
+            font-size: 0.8rem;
+            border-top: 1px solid var(--glass-border);
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <h1>🤖 AI Content Detector</h1>
-  </header>
+    <header>
+        <a href="{{ url_for('main.index') }}" class="nav-logo">
+            <i class="fas fa-robot"></i>
+            <h1>AI SHIELD SYSTEM</h1>
+        </a>
+    </header>
 
-  <main>
-    {% block content %}{% endblock %}
-  </main>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
 
-  <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <footer>
+        <p>&copy; 2026 AIShield Neural Engine. Strictly for Security Verification Purposes.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
 </html>
